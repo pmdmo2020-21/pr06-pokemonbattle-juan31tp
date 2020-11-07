@@ -2,43 +2,42 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/battleScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.battle.BattleActivity">
 
-    <!-- LinearLayout that contains the top screen's pokemon -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:id="@+id/topContenderPack"
         android:background="@color/green_50"
+        android:id="@+id/topContenderPack"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/guide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- TODO: CAMBIAR POR RANDOM NADA MÁS EMPEZAR -->
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/topContenderImage"
+            android:id="@+id/topPokemonImg"
             android:layout_weight="1"
             android:src="@drawable/gyarados"
             android:padding="@dimen/imgSelection"/>
 
-        <!-- TODO: CAMBIAR POR RANDOM NADA MÁS EMPEZAR -->
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:id="@+id/topPokemonName"
+            android:textColor="@color/black"
+            android:textSize="@dimen/pokemonNames"
             android:layout_weight="1"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:text="@string/nameGyarados"
-            android:id="@+id/topContenderName"/>
+            android:gravity="center" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="0dp"
@@ -51,22 +50,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topContenderPack">
 
-        <!-- TODO: CAMBIAR POR RANDOM NADA MÁS EMPEZAR -->
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:id="@+id/botPokemonName"
             android:layout_weight="1"
-            android:gravity="center"
-            android:id="@+id/botContenderName"
-            android:text="@string/nameGyarados"/>
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/pokemonNames"
+            android:text="@string/nameGyarados"
+            android:gravity="center" />
 
-        <!-- TODO: CAMBIAR POR RANDOM NADA MÁS EMPEZAR -->
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/botContenderImage"
+            android:id="@+id/ivBattleSecondPokemon"
             android:layout_weight="1"
-            android:src="@drawable/giratina"
+            android:src="@drawable/gyarados"
             android:padding="@dimen/imgSelection"/>
 
     </LinearLayout>
@@ -83,35 +83,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.6" />
 
     <ImageView
-        android:layout_width="100dp"
+        android:layout_width="96dp"
         android:layout_height="0dp"
-        android:id="@+id/vsImage"
-        android:src="@drawable/versus"
-        app:layout_constraintBottom_toBottomOf="@id/botContenderPack"
+        android:id="@+id/vsIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/botContenderPack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/topContenderPack"/>
+        app:layout_constraintTop_toTopOf="@+id/topContenderPack"
+        app:srcCompat="@drawable/versus"/>
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/battleTxt"
+        android:layout_margin="@dimen/imgSelection"
         android:text="@string/battleTxt"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txtSize"
         app:layout_constraintBottom_toTopOf="@+id/battleButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botContenderPack"/>
+        app:layout_constraintTop_toBottomOf="@+id/botContenderPack" />
 
     <Button
+        android:id="@+id/battleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/battleButton"
+        android:layout_margin="@dimen/imgSelection"
         android:text="@string/battleButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

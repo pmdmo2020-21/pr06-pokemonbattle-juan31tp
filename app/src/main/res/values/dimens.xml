@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="imgSelection">15dp</dimen>
+    <dimen name="txtSize">25dp</dimen>
+    <dimen name="pokemonNames">18dp</dimen>
+    <dimen name="titles">30dp</dimen>
+    <dimen name="negativeMargin">-20dp</dimen>
+    <dimen name="space">25dp</dimen>
 </resources>

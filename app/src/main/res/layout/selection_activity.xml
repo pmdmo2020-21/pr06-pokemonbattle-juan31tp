@@ -2,11 +2,158 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+    android:id="@+id/teamScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/space"
     tools:context=".ui.selection.SelectionActivity">
 
-    <!-- TODO -->
+    <!-- Guidelines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/firstThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/secondThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/selectBulbasur"
+        android:padding="@dimen/imgSelection"
+        android:src="@drawable/bulbasur"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/optionBulbasur"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/optionBulbasur"
+        android:text="@string/nameBulbasur"
+        app:layout_constraintBottom_toTopOf="@+id/firstThird"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/selectGiratina"
+        android:src="@drawable/giratina"
+        android:padding="@dimen/imgSelection"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/optionGiratina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuide"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/optionGiratina"
+        android:text="@string/nameGiratina"
+        app:layout_constraintBottom_toTopOf="@+id/firstThird"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuide" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/selectCubone"
+        android:src="@drawable/cubone"
+        android:padding="@dimen/imgSelection"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/optionCubone"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/optionBulbasur" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/optionCubone"
+        android:text="@string/nameCubone"
+        app:layout_constraintBottom_toTopOf="@+id/secondThird"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/selectGyarados"
+        android:src="@drawable/gyarados"
+        android:padding="@dimen/imgSelection"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/optionGyarados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuide"
+        app:layout_constraintTop_toBottomOf="@+id/firstThird" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/optionGyarados"
+        android:text="@string/nameGyarados"
+        app:layout_constraintBottom_toTopOf="@+id/secondThird"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuide" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/selectFeebas"
+        android:src="@drawable/feebas"
+        android:padding="@dimen/imgSelection"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/optionFeebas"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/secondThird" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/optionFeebas"
+        android:text="@string/nameFeebas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuide"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/selectPikachu"
+        android:src="@drawable/pikachu"
+        android:padding="@dimen/imgSelection"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/optionPikachu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuide"
+        app:layout_constraintTop_toTopOf="@+id/secondThird" />
+
+    <RadioButton
+        android:id="@+id/optionPikachu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/namePikachu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuide" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
