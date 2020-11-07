@@ -7,6 +7,111 @@
     android:layout_height="match_parent"
     tools:context=".ui.battle.BattleActivity">
 
-    <!-- TODO -->
+    <!-- LinearLayout that contains the top screen's pokemon -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/topContenderPack"
+        android:background="@color/green_50"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- TODO: CAMBIAR POR RANDOM NADA MÁS EMPEZAR -->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/topContenderImage"
+            android:layout_weight="1"
+            android:src="@drawable/gyarados"
+            android:padding="@dimen/imgSelection"/>
+
+        <!-- TODO: CAMBIAR POR RANDOM NADA MÁS EMPEZAR -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/nameGyarados"
+            android:id="@+id/topContenderName"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/botContenderPack"
+        android:background="@color/purple_50"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guide2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topContenderPack">
+
+        <!-- TODO: CAMBIAR POR RANDOM NADA MÁS EMPEZAR -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/botContenderName"
+            android:text="@string/nameGyarados"/>
+
+        <!-- TODO: CAMBIAR POR RANDOM NADA MÁS EMPEZAR -->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/botContenderImage"
+            android:layout_weight="1"
+            android:src="@drawable/giratina"
+            android:padding="@dimen/imgSelection"/>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:id="@+id/vsImage"
+        android:src="@drawable/versus"
+        app:layout_constraintBottom_toBottomOf="@id/botContenderPack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topContenderPack"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/battleTxt"
+        android:text="@string/battleTxt"
+        app:layout_constraintBottom_toTopOf="@+id/battleButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botContenderPack"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/battleButton"
+        android:text="@string/battleButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
