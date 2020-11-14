@@ -18,7 +18,7 @@ class SelectionActivity : AppCompatActivity() {
         const val SELECTEDPOKE: String = "SELECTEDPOKE"
 
         fun newIntent(context: Context, pokemonId: Long): Intent {
-            return Intent(context, BattleActivity::class.java).putExtra(SELECTEDPOKE, pokemonId)
+            return Intent(context, SelectionActivity::class.java).putExtra(SELECTEDPOKE, pokemonId)
         }
     }
 
@@ -60,13 +60,11 @@ class SelectionActivity : AppCompatActivity() {
     private fun imgListener(view: View) {
         val radio: RadioButton=view.tag as RadioButton
         radio.isChecked=true
-
         checkSelectedRadio(radio)
     }
 
     private fun checkSelectedRadio(view: View) {
         val selectedPokemon: RadioButton=view as RadioButton
-        val pokemon: Pokemon = view.tag as Pokemon
 
         for (radioButton in radioOptions) {
             if (selectedPokemon != radioButton) {
@@ -94,11 +92,11 @@ class SelectionActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        setResult()
+        result()
         super.onBackPressed()
     }
 
-    private fun setResult() {
+    private fun result() {
         val intent: Intent = BattleActivity.newIntent(this, pokemon.id)
         setResult(RESULT_OK, intent)
     }

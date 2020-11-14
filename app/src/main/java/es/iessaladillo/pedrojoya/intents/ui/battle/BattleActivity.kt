@@ -36,7 +36,6 @@ class BattleActivity : AppCompatActivity() {
         setContentView(binding.root)
         setFields()
         setListeners()
-
     }
 
     private fun setFields() {
@@ -86,20 +85,23 @@ class BattleActivity : AppCompatActivity() {
     private fun goToTeamScreen(pokemonId: Long, contender: ActivityResultLauncher<Intent>) {
         val intentSelection: Intent = SelectionActivity.newIntent(this, pokemonId)
         contender.launch(intentSelection)
+        startActivity(intentSelection)
+        startActivity(intentSelection)
     }
 
     // -----------------
     // METHODS THAT SETS THE INITIAL CONTENDERS
     // -----------------
     private fun setStartContenders() {
-        setRndContender(binding.topPokemonImg, binding.topPokemonName, binding.topContenderPack)
-        setRndContender(binding.botPokemonImg, binding.botPokemonName, binding.botContenderPack)
+        setRndContender(binding.topPokemonImg, binding.topPokemonName, 0)
+        setRndContender(binding.botPokemonImg, binding.botPokemonName, 1)
     }
 
-    private fun setRndContender(pokemonImg: ImageView, pokemonName: TextView, contenderPack: LinearLayout) {
+    private fun setRndContender(pokemonImg: ImageView, pokemonName: TextView, position: Int) {
         val pokemon: Pokemon = Database.getRndPokemon()
         pokemonImg.setImageDrawable(getDrawable(pokemon.drawable))
         pokemonName.text = getText(pokemon.name)
+        pokedex[position] = pokemon.id
     }
     // -----------------
 
@@ -110,6 +112,7 @@ class BattleActivity : AppCompatActivity() {
     // -----------------
     private fun goToWinnerScreen(winnerId: Long) {
         val intentWinner = WinnerActivity.newIntent(this, winnerId)
+        startActivity(intentWinner)
     }
 
     private fun letsBattle(): Long {
